@@ -1,0 +1,75 @@
+<script type="text/html" data-template-name="ZwaveNode">
+
+    <div class="form-row">
+        <label for="node-config-input-name" class="l-width"><i class="fa fa-globe"></i>
+            <span data-i18n="label.server"></span>Name</label>
+        <input type="text" id="node-config-input-name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-server" class="l-width"><i class="fa fa-globe"></i>
+            <span data-i18n="label.server"></span>Server</label>
+        <input type="text" id="node-config-input-server">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-destination" class="l-width"><i class="fa fa-globe"></i>
+            <span data-i18n="label.server"></span>Destination</label>
+        <input type="text" id="node-config-input-destination">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-user" class="l-width"><i class="fa fa-globe"></i>
+            <span data-i18n="label.server"></span>User</label>
+        <input type="text" id="node-config-input-user">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-password" class="l-width"><i class="fa fa-globe"></i>
+            <span data-i18n="label.server"></span>Password</label>
+        <input type="text" id="node-config-input-password">
+    </div>
+
+
+</script>
+
+<script type="text/html" data-help-name="ZwaveNode">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ZwaveNode',{
+        category: 'config',
+        color: '#ffdb00',
+
+        defaults: {
+            name: {
+                value: null,
+                required: true
+            },
+            server: {
+                type: "ServerNode",
+                required: true
+            },
+            destination: {
+                value: null,
+                required: true
+            },
+            user: {
+                value: null,
+                required: true
+            },
+            password: {
+                value: null,
+                required: true
+            },
+        },
+
+        inputs:1,
+        outputs:1,
+
+        label: function() {
+            return this.name || "ZwaveNode";
+        },
+    });
+</script>

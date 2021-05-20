@@ -1,0 +1,51 @@
+<script type="text/html" data-template-name="ServerNode">
+
+    <div class="form-row">
+        <label form="node-input-uid"><i class="fa fa-tag"></i> UID</label>
+        <input type="text" id="node-config-input-uid" placeholder="UID">
+    </div>
+
+    <div class="form-row">
+        <label form="node-input-name"><i class="fa fa-tag"></i> Host</label>
+        <input type="text" id="node-config-input-host" placeholder="Username">
+    </div>
+
+    <div class="form-row">
+        <label form="node-input-name"><i class="fa fa-tag"></i> Port</label>
+        <input type="text" id="node-config-input-port" placeholder="Password">
+    </div>
+
+</script>
+
+<script type="text/html" data-help-name="ServerNode">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ServerNode',{
+        category: 'config',
+        color: '#004eff',
+        defaults: {
+            uid: {
+                value: null,
+                required: true
+            },
+            host: {
+                value: null,
+                required: true
+            },
+            port: {
+                value: null,
+                required: true
+            },
+        },
+
+        inputs:1,
+        outputs:1,
+
+        label: function() {
+            return this.name || this.host;
+        }
+    });
+</script>
+
