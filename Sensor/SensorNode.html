@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<script type="text/html" data-template-name="SensorNode">
 
-</body>
-</html>
+    <div class="form-row">
+        <label form="node-input-name"><i class="fa fa-tag"></i></label>
+        <input type="text" id="node-input-name" placeholder="Address">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-driver" class="l-width"><i class="fa fa-globe"></i> <span data-i18n="label.driver"></span></label>
+        <input type="text" id="node-input-driver">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="ActivatorNode">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('SensorNode',{
+        category: 'Device',
+        color: '#a09494',
+        defaults: {
+            name: {
+                value: null,
+                required: true
+            },
+            driver: {
+                type: "ZwaveNode",
+                required: true
+            },
+            server: {
+                type: "ServerNode",
+                required: true
+
+            },
+        },
+        outputs:1,
+        label: function() {
+            return this.name|| this.host;
+        }
+    });
+</script>
+
+

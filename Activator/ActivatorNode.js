@@ -10,7 +10,10 @@ module.exports = function(RED) {
             this.subscribe(node)
 
             node.on('input', function(msg) {
-
+                console.log('input from sensor: ', msg)
+                if (msg.payload){
+                    msg.value = msg.payload
+                }
                 let set_command = {
                     "action": "set",
                     "driver": node.driver.config.name,
@@ -41,8 +44,9 @@ module.exports = function(RED) {
                 ]
             }
             node.driver.sendData(subscribe_command)
+            node.driver.addToLocalDevicesStorage(node.config.name, this)
+            console.log('subscribed')
         }
-
     }
     RED.nodes.registerType("ActivatorNode", ActivatorNode);
 }

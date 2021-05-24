@@ -18,7 +18,8 @@
     "nodes": {
       "ServerNode": "Server/ServerNode.js",
       "ActivatorNode": "Activator/ActivatorNode.js",
-      "ZwaveNode": "Zwave/ZwaveNode.js"
+      "ZwaveNode": "Zwave/ZwaveNode.js",
+      "SensorNode": "Sensor/SensorNode.js"
     }
   },
   "author": "",

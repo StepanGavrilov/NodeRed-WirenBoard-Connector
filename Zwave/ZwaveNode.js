@@ -4,11 +4,12 @@ module.exports = function(RED) {
             RED.nodes.createNode(this, config);
 
 
-            this.devices = []
+            this.devices = {}
+            this.d = []
             let node = this;
             node.config = config;
             this.server = RED.nodes.getNode(node.config.server);
-
+            this.addToServerDriverList()
         }
 
         sentGeneralSubscribe(){
@@ -31,7 +32,8 @@ module.exports = function(RED) {
             if (data.action === 'subscribe'){
                 if (data.hasOwnProperty('topics')){
                     for (let device in data.topics){
-                        this.devices.push(data.topics[device])
+                        console.log('Send data !')
+                        this.d.push(data.topics[device])
                     }
                 }
                 this.server.sendMessage(data)
@@ -39,14 +41,21 @@ module.exports = function(RED) {
             else if (data.action === 'set'){
                 this.server.sendMessage(data)
             }
-
+            else {
+                console.log('Undefined type: ', data.action)
+            }
         }
 
+        addToServerDriverList(){
+            console.log('Added to driver list!')
+            this.server.driver_storage['zwave'] = this
+        }
+
+        addToLocalDevicesStorage(address, node){
+            console.log('Added to local storage!')
+            this.devices[address] = node
+        }
     }
-
-
-
-
     RED.nodes.registerType("ZwaveNode", ZwaveNode);
 }
 
