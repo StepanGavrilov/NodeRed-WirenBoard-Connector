@@ -9,6 +9,15 @@
         <label for="node-input-driver" class="l-width"><i class="fa fa-globe"></i> <span data-i18n="label.driver"></span></label>
         <input type="text" id="node-input-driver">
     </div>
+
+    <div class="form-row">
+        <label for="node-input-translate" class="l-width"><i class="fa fa-globe"></i> <span data-i18n="label.driver"></span>
+
+        </label>
+        <input type="text" id="node-input-translate">
+
+    </div>
+
 </script>
 
 <script type="text/html" data-help-name="ActivatorNode">
@@ -31,8 +40,10 @@
             server: {
                 type: "ServerNode",
                 required: true
-
             },
+            translate: {
+                required: true
+            }
         },
         outputs:1,
         label: function() {

@@ -1,19 +1,23 @@
 module.exports = function(RED) {
     class ActivatorNode {
         constructor(config) {
-            RED.nodes.createNode(this, config);
 
+            /*
+            * Activator - device, used for
+            * actions
+            *
+            * while start node-red send subscribe
+            * to broker and add to driver list
+            * */
+
+            RED.nodes.createNode(this, config);
             var node = this;
             node.config = config;
             node.driver = RED.nodes.getNode(node.config.driver);
-
-            this.subscribe(node)
+            //this.start(node)
 
             node.on('input', function(msg) {
-                console.log('input from sensor: ', msg)
-                if (msg.payload){
-                    msg.value = msg.payload
-                }
+
                 let set_command = {
                     "action": "set",
                     "driver": node.driver.config.name,
@@ -27,25 +31,10 @@ module.exports = function(RED) {
                 }
                 node.driver.sendData(set_command)
             });
-
         }
 
-        subscribe(node){
-            let subscribe_command = {
-                "action": "subscribe",
-                "driver": node.driver.config.name,
-                "destination": node.driver.config.destination,
-                "driver_properties": {
-                    "username":  node.driver.config.user,
-                    "password":  node.driver.config.password
-                },
-                "topics": [
-                    node.config.name
-                ]
-            }
-            node.driver.sendData(subscribe_command)
+        start(node){
             node.driver.addToLocalDevicesStorage(node.config.name, this)
-            console.log('subscribed')
         }
     }
     RED.nodes.registerType("ActivatorNode", ActivatorNode);
