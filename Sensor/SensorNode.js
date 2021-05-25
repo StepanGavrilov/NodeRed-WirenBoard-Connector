@@ -8,6 +8,7 @@ module.exports = function(RED) {
             node.driver = RED.nodes.getNode(node.config.driver);
 
             this.subscribe(node)
+            console.log(node.config)
 
             node.on('input', function(msg) {
                 console.log('SENSOR SET!')

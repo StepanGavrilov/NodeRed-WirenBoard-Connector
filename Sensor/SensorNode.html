@@ -11,11 +11,11 @@
     </div>
 
     <div class="form-row">
-        <label for="node-input-translate" class="l-width"><i class="fa fa-globe"></i> <span data-i18n="label.driver"></span>
-
-        </label>
-        <input type="text" id="node-input-translate">
-
+        <label for="node-input-translator" class="l-width"><i class="fa fa-globe"></i> <span data-i18n="label.driver"></span></label>
+            <select type="text" id="node-input-translator">
+                <option>string</option>
+                <option>integer</option>
+            </select>
     </div>
 
 </script>
@@ -41,7 +41,7 @@
                 type: "ServerNode",
                 required: true
             },
-            translate: {
+            translator: {
                 required: true
             }
         },
