@@ -14,7 +14,6 @@ module.exports = function(RED) {
             var node = this;
             node.config = config;
             node.driver = RED.nodes.getNode(node.config.driver);
-            //this.start(node)
 
             node.on('input', function(msg) {
 

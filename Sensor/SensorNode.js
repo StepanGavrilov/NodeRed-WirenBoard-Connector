@@ -11,7 +11,6 @@ module.exports = function(RED) {
             console.log(node.config)
 
             node.on('input', function(msg) {
-                console.log('SENSOR SET!')
                 let set_command = {
                     "action": "set",
                     "driver": node.driver.config.name,

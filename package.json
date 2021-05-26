@@ -1,18 +1,27 @@
 {
-  "name": "node-red-contrib-first-node",
+  "author": {
+    "name": "Stepa",
+    "email": "gavrilovstepan78@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/StepanGavrilov/NodeRed-WirenBoard-Connector/issues"
+  },
+  "name": "node-red-contrib-wb-connector-nd-simple-actions",
   "version": "1.0.0",
   "dependencies": {
     "bufferutil": "^4.0.1",
     "utf-8-validate": "^5.0.2"
   },
-  "description": "",
+  "description": "WB connector",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "ServerNode",
     "ActivatorNode",
-    "ZwaveNode"
+    "ZwaveNode",
+    "SensorNode",
+    "node-red"
   ],
   "node-red": {
     "nodes": {
@@ -22,6 +31,10 @@
       "SensorNode": "Sensor/SensorNode.js"
     }
   },
-  "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StepanGavrilov/NodeRed-WirenBoard-Connector.git"
+  },
+  "homepage": "https://github.com/StepanGavrilov/NodeRed-WirenBoard-Connector"
 }

@@ -36,19 +36,8 @@ module.exports = function (RED) {
 
                         let node = this.driver_storage[response.driver].devices[response.address]
                         if (node) {
-                            console.log('CATCH !', response.address, response)
-
-                            if (node.config.translate === "string")
-                            {
-                                response.value = response.value.toString()
-                                console.log('STRING')
-                            }
-                            else if(node.config.translate === "integer"){
-
-                                console.log('INTEGER')
-                                parseInt(response.value)
-                            }
-
+                            if (node.config.translate === "string"){response.value = response.value.toString()}
+                            else if(node.config.translate === "integer"){parseInt(response.value)}
                             node.send([{value: response.value}])
                         }
                     }
