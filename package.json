@@ -7,7 +7,7 @@
     "url": "https://github.com/StepanGavrilov/NodeRed-WirenBoard-Connector/issues"
   },
   "name": "node-red-contrib-wb-connector-nd-simple-actions",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "dependencies": {
     "bufferutil": "^4.0.1",
     "utf-8-validate": "^5.0.2",
