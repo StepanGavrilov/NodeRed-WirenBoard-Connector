@@ -1,5 +1,5 @@
 module.exports = function(RED) {
-    class ZwaveNode {
+    class DriverNode {
         constructor(config) {
 
             /*
@@ -37,6 +37,6 @@ module.exports = function(RED) {
             this.devices[address] = node
         }
     }
-    RED.nodes.registerType("ZwaveNode", ZwaveNode);
+    RED.nodes.registerType("DriverNode", DriverNode);
 }
 

@@ -18,14 +18,14 @@
 <script type="text/javascript">
     RED.nodes.registerType('ActivatorNode',{
         category: 'Device',
-        color: '#ffffff',
+        color: '#e3da26',
         defaults: {
             name: {
                 value: null,
                 required: true
             },
             driver: {
-                type: "ZwaveNode",
+                type: "DriverNode",
                 required: true
             },
             server: {

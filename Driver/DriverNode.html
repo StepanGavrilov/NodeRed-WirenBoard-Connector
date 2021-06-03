@@ -1,4 +1,4 @@
-<script type="text/html" data-template-name="ZwaveNode">
+<script type="text/html" data-template-name="DriverNode">
 
     <div class="form-row">
         <label for="node-config-input-name" class="l-width"><i class="fa fa-globe"></i>
@@ -33,14 +33,14 @@
 
 </script>
 
-<script type="text/html" data-help-name="ZwaveNode">
+<script type="text/html" data-help-name="DriverNode">
     <p>A simple node that converts the message payloads into all lower-case characters</p>
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('ZwaveNode',{
+    RED.nodes.registerType('DriverNode',{
         category: 'config',
-        color: '#ffdb00',
+        color: '#ffe55c',
 
         defaults: {
             name: {
@@ -69,7 +69,7 @@
         outputs:1,
 
         label: function() {
-            return this.name || "ZwaveNode";
+            return this.name || "DriverNode";
         },
     });
 </script>
