@@ -20,7 +20,7 @@
   "keywords": [
     "ServerNode",
     "ActivatorNode",
-    "ZwaveNode",
+    "DriverNode",
     "SensorNode",
     "node-red"
   ],
@@ -28,7 +28,7 @@
     "nodes": {
       "ServerNode": "Server/ServerNode.js",
       "ActivatorNode": "Activator/ActivatorNode.js",
-      "ZwaveNode": "Zwave/ZwaveNode.js",
+      "DriverNode": "Driver/DriverNode.js",
       "SensorNode": "Sensor/SensorNode.js"
     }
   },

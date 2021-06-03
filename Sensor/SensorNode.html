@@ -27,14 +27,14 @@
 <script type="text/javascript">
     RED.nodes.registerType('SensorNode',{
         category: 'Device',
-        color: '#a09494',
+        color: '#cb51f6',
         defaults: {
             name: {
                 value: null,
                 required: true
             },
             driver: {
-                type: "ZwaveNode",
+                type: "DriverNode",
                 required: true
             },
             server: {
